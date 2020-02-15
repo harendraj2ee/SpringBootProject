@@ -1,0 +1,284 @@
+List Of APIS Ducat
+
+1 GET URL: http://localhost:8080/emps/ 
+2 POST URL: http://localhost:8080/emps/
+{
+	"name" : "Riya",
+	"job" : "Mean Stack",
+	"salary": 12000
+}
+3 PUT URL: http://localhost:8080/emps/
+{
+	"id" : 2,
+	"name" : "Riya",
+	"job" : "Mean Stack",
+	"salary": 12000
+}
+4 Delete URL:http://localhost:8080/emps/4
+
+Using JPA
+1 GET URL: http://localhost:8080/students/
+http://localhost:8080/students/1
+By Course URL: http://localhost:8080/students/course/MBA/
+2 POST URL: http://localhost:8080/students/
+{
+	"name":"Ravi",
+	"course":"BA",
+	"fee":"500000"
+}
+3 PUT URL: http://localhost:8080/students/
+{
+	"id":5,
+	"name":"Ravi Pagal",
+	"course":"CCNA",
+	"fee":"500000"
+}
+4 Delete URL: http://localhost:8080/students/4/
+
+Is-A Relation (Single table Inheritance)
+1 POST URL : http://localhost:8010/isASingleTable/persons/
+{
+	"id":0,
+	"name":"Vicky doner"
+}
+2 GET URL : http://localhost:8010/isASingleTable/persons/
+
+3 POST URL: http://localhost:8010/isASingleTable/emps/
+{
+	"id":1,
+	"name":"Dinanath",
+	"job":"Supervisor",
+	"salary":30000	
+}
+4 GET URL: http://localhost:8010/isASingleTable/emps/
+
+5 POST URL : http://localhost:8010/isASingleTable/Students/
+{
+	"id":0,
+	"name":"Prabhu",
+	"course":"Professor",
+	"fee":200000
+}
+6 GET URL:  http://localhost:8010/isASingleTable/Students/
+
+Has-A Relation API List give below:--
+1:-One-To-One API List GET API : http://localhost:8010/onetoone/countries/
+[
+{
+id: 1,
+name: "India",
+hos: {
+id: 1,
+title: "Prime Minister",
+name: "Narendra Modi"
+}
+},
+{
+id: 2,
+name: "U.K.",
+hos: {
+id: 2,
+title: "Queen",
+name: "Aliza Bet"
+}
+}
+]
+2: POST API URL : http://localhost:8010/onetoone/countries/
+{
+	"id":0,
+	"name":"India",
+	"hos":{
+		"id":0,
+		"title":"Prime Minister",
+		"name":"Narendra Modi"
+	}
+}
+
+2 : One-To-Many PK and FK
+POST API URL:http://localhost:8010/onetomanypkfk/courses/ 
+
+{
+id: 1,
+name: "Spring",
+fee: 20000,
+topics: [
+{
+id: 2,
+name: "AOP",
+weightage: 20
+},
+{
+id: 1,
+name: "MVC",
+weightage: 30
+}
+]
+}
+
+
+
+GET API URL: http://localhost:8010/onetomanypkfk/courses/ 
+[
+{
+id: 1,
+name: "Spring",
+fee: 20000,
+topics: [
+{
+id: 2,
+name: "AOP",
+weightage: 20
+},
+{
+id: 1,
+name: "MVC",
+weightage: 30
+}
+]
+},
+{
+id: 2,
+name: "Core Java",
+fee: 20000,
+topics: [
+{
+id: 5,
+name: "OOPS",
+weightage: 20
+},
+{
+id: 4,
+name: "Regular Expression",
+weightage: 10
+},
+{
+id: 7,
+name: "Collection",
+weightage: 20
+},
+{
+id: 6,
+name: "Multitreading",
+weightage: 30
+},
+{
+id: 8,
+name: "Files Input/Output",
+weightage: 15
+},
+{
+id: 3,
+name: "Exceptin Handling",
+weightage: 20
+}
+]
+}
+]
+
+One-To-Many Relation table
+POST API URL : http://localhost:8010/onetomanyrelationtable/courses/
+{
+	"id":0,
+	"name":"Spring Boot",
+	"fee": 12000,
+	"topics":[
+		{
+		"id":0,
+		"name":"MVC",
+		"weightage":30
+	},{
+		"id":0,
+		"name":"AOP",
+		"weightage":40
+	},{
+		"id":0,
+		"name":"IOC",
+		"weightage":40
+	},
+	{
+		"id":0,
+		"name":"DI",
+		"weightage":10
+	}
+	
+	]
+}
+
+GET API URL: http://localhost:8010/onetomanyrelationtable/courses/ 
+ http://localhost:8010/onetomanyrelationtable/topics/
+
+{
+id: 4,
+name: "Spring Boot",
+fee: 12000,
+topics: [
+{
+id: 12,
+name: "MVC",
+weightage: 30
+},
+{
+id: 13,
+name: "AOP",
+weightage: 40
+},
+{
+id: 11,
+name: "DI",
+weightage: 10
+},
+{
+id: 14,
+name: "IOC",
+weightage: 40
+}
+]
+}
+
+
+----JWT Token URL first get Bearer Token then used in API--
+URL POST API : http://localhost:8080/empApiSecurity/token
+then Get Bear Token
+{
+"username":"harendraj2ee",
+"password":"12345"
+}
+https://jwt.io/
+check token
+Bearer Token : eyJhbGciOiJIUzUxMiJ9.eyJ1c3IiOiJoYXJlbmRyYWoyZWUiLCJpc3MiOiJkdWNhdCIsIm1pZCI6ImhhcmVuZHJhajJlZUBnbWFpbC5jb20iLCJyb2wiOiJBRE1JTixNT0RFUkFUT1IifQ.eRAQKuDGbGuxeT2suDDnl4-WJpQoI1GQhf1zEuyiVE0X2tjeMzGE2hbIFCOJIpq1DPpIrJqS-IbsKdiqY_A_Nw
+
+GET API URL : http://localhost:8080/empApiSecurity/emps/
+
+Oauth2 :---https://tools.ietf.org/html/rfc6749
+oauth-Client and oauth-resource-server run two program then
+use as username : neeraj
+password : 1234
+http://localhost:7070/client/getToken
+
+Single Sign Authentication Application there are three Application minimum required.. given below
+1:-sso-app
+2:-sso-rest
+3:-sso-server
+URL: http://localhost:8081/sso-web/
+URL: http://localhost:8080/sso-server/login
+username : neeraj
+password: 1234
+http://localhost:8081/sso-web/
+http://localhost:8081/sso-web/add
+
+GET API URL:-http://localhost:9090/sso-rest/emps/
+
+----------------------------------Single Sign Rememberme Project------------
+http://localhost:7070/
+
+and create table as persisten_logins
+username varchar(145), series varchar(145), token varchar(145), last_used TIMESTAMP;
+then use remember me check then store data while hit a brower login...
+
+--------------MicroServices-------------------------
+EurekaServer and EurekaClient
+1st Run EurekaServer Application - URL: http://localhost:7171/
+Click the Status Link as new tab open the url and input two number then hit 
+2nd Run EurekaClinet Application Addition URL:-http://desktop-g7neq6b:8181/adder/add/4/5
+3rd Run feignClient Application URL : http://desktop-g7neq6b:8282/sum/444/7/
+Notes:- If eurekaServer and feignClient running then output is fallback because eurekaClient is not running
